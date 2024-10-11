@@ -25,10 +25,12 @@ public class GrpcRetryInfoCalculatorTest {
         RetryInfo retryInfo1 = calculator.createRetryInfo();
         RetryInfo retryInfo2 = calculator.createRetryInfo();
         RetryInfo retryInfo3 = calculator.createRetryInfo();
+        RetryInfo retryInfo4 = calculator.createRetryInfo();
 
         assertThat(retryInfo1.getRetryDelay().getSeconds(), equalTo(1L));
         assertThat(retryInfo2.getRetryDelay().getSeconds(), equalTo(1L));
         assertThat(retryInfo3.getRetryDelay().getSeconds(), equalTo(2L));
+        assertThat(retryInfo4.getRetryDelay().getSeconds(), equalTo(4L));
     }
 
     @Test
