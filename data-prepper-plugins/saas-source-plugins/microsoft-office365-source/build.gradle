@@ -16,9 +16,9 @@ dependencies {
     implementation project(path: ':data-prepper-plugins:common')
 
     // Microsoft Graph API dependencies
-    implementation 'com.microsoft.graph:microsoft-graph:5.65.0'
-    implementation 'com.microsoft.azure:msal4j:1.13.9'
-    implementation 'com.azure:azure-identity:1.16.3'
+    implementation('com.microsoft.graph:microsoft-graph:5.65.0'){ exclude group: 'io.projectreactor', module: 'reactor-core' }
+    implementation('com.microsoft.azure:msal4j:1.13.9'){ exclude group: 'io.projectreactor', module: 'reactor-core' }
+    implementation('com.azure:azure-identity:1.16.3'){ exclude group: 'io.projectreactor', module: 'reactor-core' }
 
     implementation libs.commons.io
     implementation 'io.micrometer:micrometer-core'
